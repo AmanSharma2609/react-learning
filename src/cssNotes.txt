@@ -1,0 +1,189 @@
+order property in flexbox : (can be applied to individual item)
+
+ 1) When there are 3 elements so each element has by default 0 as the order
+ if we give it -1 so it will shift to left and if we give a positive integer it will shift to right.
+
+ 2) Increase the negative number to get to the desired(left) value and same for the right side postive value
+
+3) align-self(same props as align-items and can be applied to individual item)
+
+4) Oh no! The frogs are all squeezed onto a single row of lilypads. Spread them out using the flex-wrap property, which accepts the following values:
+
+nowrap: Every item is fit to a single line.
+wrap: Items wrap around to additional lines.
+wrap-reverse: Items wrap around to additional lines in reverse.
+
+5) flex-direction+ flex-wrap = flex-flow{fd fw}
+
+6) The frogs are spread all over the pond, but the lilypads are
+ bunched at the top. You can use align-content to set how multiple lines are spaced apart from each other. This property takes the following values:
+
+flex-start: Lines are packed at the top of the container.
+flex-end: Lines are packed at the bottom of the container.
+center: Lines are packed at the vertical center of the container.
+space-between: Lines display with equal spacing between them.
+space-around: Lines display with equal spacing around them.
+stretch: Lines are stretched to fit the container.
+
+This can be confusing, but align-content determines the spacing between lines, while align-items
+ determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.3)
+
+ CSS ANIMATION
+
+ CSS Movement:
+ 1)Transition Property
+ 2)Animaiton property
+
+1) .element{
+    transition: 
+    [property](on what property opacity etc) 
+    [duration](how long the animation will last)
+    [ease](ease-in ease-out)
+    [delay](how long before the animation starts)
+}
+property: font-size
+          background-color
+          width
+          Left
+not animatable: display, font-family, position(absolute)    
+
+performant property:- position:(transform) translate
+                      scale:(transform)
+                      rotation:(transform)
+                      opacity:
+Animate anything else than these properties you will not hit silky smooth 60fps.                      
+
+Triggering{
+    hover pseudo class
+    class change
+}
+
+trnasition always on the box on the div which is looking for the change in property
+and on hover we transform it.
+pointer-events: none (no interaction)
+
+CSS ANIMATION Property:
+keyframes
+
+@keyframes [name] {
+    from{
+        height: 200px;
+        background: orange;
+        [styles];
+    }
+    to{
+        height: 400px;
+        background: pink;
+        [styles];
+    }
+}
+animation : animation: 
+              name 
+              duration
+              timing-function 
+              delay 
+              iteration-count 
+              direction 
+              fill-mode
+              play-state paused in whichever state it is 20% or 70% then click again it will complete the animation
+  <BrowserRouter>
+      <div className='App'>
+      <ThemeProvider theme={theme} >
+      <AppBar />
+      </ThemeProvider>
+      <Route render={({location}) => (
+        <TransitionGroup>
+        <CSSTransition 
+        key={location.key}
+        timeout={300}
+        classNames='fade'>
+        <Switch location={location}>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/Candidate" component={CandidateList}/>
+        </Switch>
+        </CSSTransition>
+        </TransitionGroup>
+      )} />
+      </div>
+      </BrowserRouter>
+const Home = lazy(() => import('../src/ui-practice/home'))
+const CandidateList = lazy(() => import('../src/ui-practice/candidate'))
+import Home from '../src/ui-practice/home'
+import CandidateList from '../src/ui-practice/candidate'
+
+/* Animation on Page Load starts SLIDE */
+.slide-enter{
+  opacity: 0;
+  transform: scale(0.97) translateY(5px);
+  z-index: 1;
+}
+.slide-enter.slide-enter-active{
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 300ms linear 100ms, transform 300ms ease-in-out 100ms;
+}
+
+/* slide exit */
+.slide-exit{
+  opacity: 1;
+  transform: scale(1) translateY(0)
+}
+.slide-exit.slide-exit-active{
+  opacity: 0;
+  transform: scale(0.97) translateY(5px);
+  transition: opacity 150ms linear, transform 150ms ease-out;
+}
+.slide-exit-done{
+  opacity: 0;
+}
+/* Animation on Page Load end SLIDE */
+
+/* .fade-enter{
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 1000ms ease-in 500ms;
+} */
+
+SVG 
+Scallable - quality of image 
+vectro - file size is small 
+modifiable - can be manipulated with css and js
+
+onMouseEnter={this.handleMouseHover}
+          onMouseLeave={this.handleMouseHover}
+          for showing component on hover or a button
+
+          handleNext = () => {
+    if (this.state.countScroll !== this.state.constituencyHistoryData.upcoming_election.length - 1) {
+      this.setState({ countScroll: this.state.countScroll + 1 });
+    }
+    document.getElementById('scrollDiv').scrollBy({ left: (265), behavior: 'smooth' });
+  };
+
+  // ====================================================To switch the card value by 1-===================================================================
+
+  handleBack = () => {
+    if (this.state.countScroll !== 0) {
+      this.setState({ countScroll: this.state.countScroll - 1 });
+    }
+    document.getElementById('scrollDiv').scrollBy({ left: (-265), behavior: 'smooth' });
+  };
+
+  const scroller = useRef(null)
+  const increment = () => {
+    setCounter(counter + 1)
+  }
+  const handleRightClick = () => {
+     scroller.current.scrollLeft += 600;
+  }
+  const handleLeftClick = () => {
+    scroller.current.scrollLeft -= 600;
+  }
+  use ref={scroller}
+  after elipsing the text we can use the title property to show the text if it is not to big
+  text overflow properites will not work on the h tags
+
+  rem on every class can b changed by putting the html tag in the media querry and reducing the rem like 0.9 rem from 1 rem

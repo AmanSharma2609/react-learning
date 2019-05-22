@@ -1,0 +1,5 @@
+Suspense =>
+
+1) Once the page is loaded using react lazy than it will be stored in react cache and the chunk won't load agian for example the home page chunk.
+2) use Suspense for assets such as images, video, audio, font, script tags, stylesheets. pause rendering.
+3) Make sure to pass strictMode on the app in index.js can work without concurrent react just fires the fallback. react.concurrent mode chunks

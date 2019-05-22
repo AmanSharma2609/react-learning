@@ -1,0 +1,31 @@
+second argument that we pass in useEffect will retrigger the api call or the first argument of useEffect if there is a change in that argument and it accepts an array
+for the time being
+pass and empty array so nothing to watch for the change so it will execute as componentDidMount and it will run only once
+
+pass an actual array if we want the componentDidMount with componentDidUpdate then the array we passed changes it will retigger the render hence the first
+argument of useEffect
+
+useEffect cleanUp
+
+componentUnmount
+in first argument we can return an function it will get callled on every render cycle and will act as a clean up before the effect is applied
+
+we can have multiple useEffect
+
+useEffect provides a cleanUp function for performance reason and that is a return function
+
+useEffect(() => {
+    document.addEventListner('mousemove', mousemoveHandler)
+    return() => {
+        document.removeEventListner('mousemove', mousemoveHandler) //acts as componentUnmount method or clean up
+    }
+})
+
+pass a hook state in a function and we can rename it and use it there
+onSubmit({} => {
+    formSubmit(name,SetName)
+}) 
+formSubmit=(value,SetValue) => {
+
+}
+if using hooks the bootstrap properties won't reflect immediatley if it is not put inside the suspense tag instead use normal css or material ui's css

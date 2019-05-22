@@ -1,0 +1,24 @@
+import react from 'react
+
+const authContext = React.createContext({status:login, login: () =>{}})
+
+export default authContext;
+
+wrap your app component and it 
+AuthContext.Provider as a component
+and use it in other hooks like
+
+<AuthContext.Provider value={{ status: authStatus//which is a hook var in app.js, login:login// a function which is an function in app.js to toggle authStatus}}
+
+import authContext from ''../
+import useContext from 'react'
+const auth = useContext(authContext)
+
+<button onClick={auth.login}></button
+
+Model: React component, virtual dom, redux,
+View: Browser Dom,
+Controller: Click event, axios
+
+the AppContext.Provider tag actually need to either add some values or change it and deliver it, if we want to directly use it we can simply call
+  const {check}  = useContext(AppContext)

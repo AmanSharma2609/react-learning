@@ -1,0 +1,15 @@
+React cache, Scheduler
+
+Profiling tool
+use react memo to reduce the render time when using with functional component the hooks part it reduced render time from 17.8ms to 8ms
+the github user filter option when by default we are rendering the 5 user then when we click on 10 user the we don't re render the 1st 5 users because of memo
+
+const filteredUser = useMemo (
+    () => filterUsers(users,searchText),
+    [users, searchText]
+)
+react will call it whenever these two dependecies changes just like the useEffect callback
+
+trace to check big codes
+
+fb.me/react-Profiling, fb.me/react-interaction-tracing

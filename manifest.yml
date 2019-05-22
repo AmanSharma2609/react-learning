@@ -1,0 +1,8 @@
+---
+applications:
+- name: react-learning
+  memory: 64M
+  path: './build'
+  instances: 1
+  domain: cfapps.io
+  buildpack:  https://github.com/cloudfoundry/php-buildpack.git

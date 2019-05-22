@@ -1,0 +1,56 @@
+Formik
+Platform
+
+Animation.
+Popmotion
+POSE
+<Sidebar pose={isVisible ? 'visible} : hidden }>
+<Item /> 
+<Item />
+<item />
+</Sidebar>
+const Item = posed.li({
+    hidden:{
+        y=40, opacity:0
+}
+visible:{
+    y: 0, opacity: 1
+}
+})
+Sass support and css modules
+TSX
+Components as unit of work
+can also be (re)used as lifecycle methods and with hooks also
+
+1-Animation) Hover Animation more showey or larger highlight
+2-Animation) sticky property
+3) Scale x and y and opacity 
+
+const Button = posed.div({
+    hoverable = true
+    init:{
+        scale: 1,
+        boxShadow:  '0px 0px 0px rgba(0,0,0,0')
+    },
+    hover:{
+        scale: 1.2,
+        boxShadow: '0px 5px 10px rgba(0,0,0,0.2)
+    }
+})
+
+Nested routing 
+https://reacttraining.com/react-router/core/guides/philosophy
+
+Static Routing
+If you’ve used Rails, Express, Ember, Angular etc. you’ve used static routing. 
+In these frameworks, you declare your routes as part of your app’s initialization before any rendering takes place.
+ React Router pre-v4 was also static (mostly). Let’s take a look at how to configure routes in express:
+
+ Note how the routes are declared before the app listens.
+  The client side routers we’ve used are similar.
+   In Angular you declare your routes up front and then import them to the top-level AppModule before rendering:
+
+
+   border color 
+   login page issue 
+   border image 
